@@ -20,3 +20,40 @@ function handleUserMessage() {
 
 // Add an event listener to the submit button
 submitButton.addEventListener('click', handleUserMessage);
+
+
+
+
+//// chat bot 
+
+const chatDisplay = document.getElementById('chat-display');
+const chatInput = document.getElementById('chat-input');
+
+chatInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    const message = chatInput.value.trim().toLowerCase();
+    chatInput.value = '';
+
+    if (message === 'hello') {
+      appendBotMessage('Hello back!');
+    } else {
+      appendUserMessage(message);
+      appendBotMessage("I'm sorry, I didn't understand that.");
+    }
+  }
+});
+
+function appendUserMessage(message) {
+  const userMessage = document.createElement('div');
+  userMessage.classList.add('user-message');
+  userMessage.textContent = message;
+  chatDisplay.appendChild(userMessage);
+}
+
+function appendBotMessage(message) {
+  const botMessage = document.createElement('div');
+  botMessage.classList.add('bot-message');
+  botMessage.textContent = message;
+  chatDisplay.appendChild(botMessage);
+}
+
