@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (userInput.toLowerCase() === 'hello world'.toLowerCase()) {
           response = 'Hello Ziad';
+      if (userInput.toLowerCase() === 'fuck you'.toLowerCase()) {
+          response = 'this type of language is not tolerated on the internet';
       } else {
           response = 'I am not programmed to respond to this message.';
       }
