@@ -27,51 +27,49 @@
 //// chat bot 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const userInput = document.getElementById('user-input');
-  const sendButton = document.getElementById('send-button');
-  const chatOutput = document.getElementById('chat-output');
-
-  sendButton.addEventListener('click', () => {
-      const input = userInput.value;
-      userInput.value = '';
-      sendMessage(input, 'user-message');
-      generateResponse(input);
+    const userInput = document.getElementById('user-input');
+    const sendButton = document.getElementById('send-button');
+    const chatOutput = document.getElementById('chat-output');
+  
+    sendButton.addEventListener('click', () => {
+        const input = userInput.value;
+        userInput.value = '';
+        sendMessage(input, 'user-message');
+        generateResponse(input);
+    });
+  
+    userInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            const input = userInput.value;
+            userInput.value = '';
+            sendMessage(input, 'user-message');
+            generateResponse(input);
+        }
+    });
+  
+    function sendMessage(text, className) {
+        if (text.trim() !== '') {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', className);
+            messageElement.textContent = text;
+            chatOutput.appendChild(messageElement);
+            chatOutput.scrollTop = chatOutput.scrollHeight;
+        }
+    }
+  
+    function generateResponse(userInput) {
+        let response = '';
+  
+        if (userInput.toLowerCase() === 'hello world'.toLowerCase()) {
+            response = 'Hello Ziad';
+        } else {
+            response = 'I am not programmed to respond to this message.';
+        }
+  
+        // You can add more conditions here
+  
+        setTimeout(() => {
+            sendMessage(response, 'bot-message');
+        }, 1000);
+    }
   });
-
-  userInput.addEventListener('keypress', (event) => {
-      if (event.key === 'Enter') {
-          const input = userInput.value;
-          userInput.value = '';
-          sendMessage(input, 'user-message');
-          generateResponse(input);
-      }
-  });
-
-  function sendMessage(text, className) {
-      if (text.trim() !== '') {
-          const messageElement = document.createElement('div');
-          messageElement.classList.add('message', className);
-          messageElement.textContent = text;
-          chatOutput.appendChild(messageElement);
-          chatOutput.scrollTop = chatOutput.scrollHeight;
-      }
-  }
-
-  function generateResponse(userInput) {
-      let response = '';
-
-      if (userInput.toLowerCase() === 'hello world'.toLowerCase()) {
-          response = 'Hello Ziad';
-      if (userInput.toLowerCase() === 'fuck you'.toLowerCase()) {
-          response = 'this type of language is not tolerated on the internet';
-      } else {
-          response = 'I am not programmed to respond to this message.';
-      }
-
-      // You can add more conditions here
-
-      setTimeout(() => {
-          sendMessage(response, 'bot-message');
-      }, 1000);
-  }
-});
