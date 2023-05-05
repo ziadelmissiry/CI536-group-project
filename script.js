@@ -25,8 +25,8 @@
 
 
 //// chat bot 
-const screenNames = [screen, display,]
-const cores = [1, 2, 4, one, two, four, single, double, quad]
+const screenNames = ["screen", "display"];
+const cores = ["1", "2", "4", "one", "two", "four", "single", "double", "quad"];
 
 document.addEventListener('DOMContentLoaded', () => {
   const userInput = document.getElementById('user-input');
