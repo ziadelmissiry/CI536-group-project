@@ -25,6 +25,8 @@
 
 
 //// chat bot 
+const screenNames = [screen, display,]
+const cores = [1, 2, 4, one, two, four, single, double, quad]
 
 document.addEventListener('DOMContentLoaded', () => {
   const userInput = document.getElementById('user-input');
@@ -62,16 +64,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (userInput.toLowerCase() === 'hello world'.toLowerCase()) {
           response = 'Hello Ziad';
-      if (userInput.toLowerCase() === 'fuck you'.toLowerCase()) {
+      } else if (userInput.toLowerCase() === 'fuck you'.toLowerCase()) {
           response = 'this type of language is not tolerated on the internet';
       } else {
           response = 'I am not programmed to respond to this message.';
       }
 
       // You can add more conditions here
-
+      if (userInput.toLowerCase() == screenNames) {
+        response = "Finding Laptops with the best displays";
+      } else if (userInput.includes("core", "cores").toLowerCase()) {
+        if (userInput.includes(cores).toLowerCase()) {
+            reponse = "finding latops with desired cores..";
+        }
+      } else {
+            repsonse = "I am not programmed to respond to this message";
+      }
+      
       setTimeout(() => {
           sendMessage(response, 'bot-message');
       }, 1000);
-  }
-});
+    }
+})
