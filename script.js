@@ -1,3 +1,35 @@
+<<<<<<< HEAD
+=======
+// // Get the necessary DOM elements
+// const userInput = document.getElementById('user-input');
+// const submitButton = document.getElementById('submit-button');
+// const chatOutput = document.getElementById('chat-output');
+
+// // Function to handle the user's message
+// function handleUserMessage() {
+//   // Get the user's message from the input field
+//   const userMessage = userInput.value;
+
+//   // You can add your chatbot's response logic here
+//   const chatbotResponse = `You said: ${userMessage}`;
+
+//   // Display the chatbot's response in the output area
+//   chatOutput.innerHTML += `<p>${chatbotResponse}</p>`;
+
+//   // Clear the user input field
+//   userInput.value = '';
+// }
+
+// // Add an event listener to the submit button
+// submitButton.addEventListener('click', handleUserMessage);
+
+
+
+
+//// chat bot 
+const screenNames = ["screen", "display"];
+const cores = ["1", "2", "4", "one", "two", "four", "single", "double", "quad"];
+>>>>>>> ce79c76bf1b7b875b30cc52f29a6b4318f4c916b
 
 document.addEventListener('DOMContentLoaded', () => {
   const userInput = document.getElementById('user-input');
@@ -33,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function generateResponse(userInput) {
     let response = '';
 
+<<<<<<< HEAD
     if (userInput.toLowerCase() === 'hello world') {
       response = 'Hello!';
     } else if (userInput.toLowerCase().includes('recommend a laptop')) {
@@ -40,6 +73,39 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       response = 'I am not programmed to respond to this message.';
     }
+=======
+      if (userInput.toLowerCase() === 'hello world'.toLowerCase()) {
+          response = 'Hello Ziad';
+      } else if (userInput.toLowerCase() === 'fuck you'.toLowerCase()) {
+          response = 'this type of language is not tolerated on the internet';
+      } else {
+          response = 'I am not programmed to respond to this message.';
+      }
+
+      // You can add more conditions here
+      if (userInput.toLowerCase() == screenNames) {
+        response = "Finding Laptops with the best displays";
+      } else if (userInput.includes("core", "cores").toLowerCase()) {
+        if (userInput.includes(cores).toLowerCase()) {
+            reponse = "finding latops with desired cores..";
+        }
+      } else {
+            repsonse = "I am not programmed to respond to this message";
+      }
+      
+      setTimeout(() => {
+          sendMessage(response, 'bot-message');
+      }, 1000);
+    }
+})
+    if (userInput.toLowerCase() === 'hello world') {
+      response = 'Hello!';
+    } else if (userInput.toLowerCase().includes('recommend a laptop')) {
+      response = getLaptopRecommendation(userInput);
+    } else {
+      response = 'I am not programmed to respond to this message.';
+    }
+>>>>>>> ce79c76bf1b7b875b30cc52f29a6b4318f4c916b
 
     // You can add more conditions here
 
@@ -68,4 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     return recommendation || "I couldn't find a recommendation based on your input. Please try again.";
   }
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> ce79c76bf1b7b875b30cc52f29a6b4318f4c916b
