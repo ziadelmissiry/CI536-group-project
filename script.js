@@ -30,21 +30,19 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   
-  const laptopInputs = ["programming", "coding", "editing", "everyday use", "general use"];
   const ramInputs = ["fast", "fastest", "quick", "quickest", "RAM"];
-  const displayInputs = ["best screen", "best display", "screen", "display"];
+  const storageInputs = ["storage", "space"];
   const gamingInputs = ["games", "gaming", "game"];
   const programmingInputs = ["programming","programme","coding","code"];
-  const editing = ["editing","edit","create","creative"];
+  const editingInputs = ["editing","edit","create","creative"];
   const generalInputs = ["general","general use","everyday","everday use"];
 
   const gamingLaptops = ["Alienware m15 r7","ASUS ROG Zephyrus G14","Razer Blade 15","MSI GS66 Stealth"];
   const generalLaptops = ["Dell XPS 13, ","MacBook Air, ","Lenovo ThinkPad X1 Carbon, ","Microsoft Surface Laptop 4"];
   const editingLaptops = ["MacBook Pro 16' ", "Lenovo ThinkPad P1 Gen 3, ", "Dell XPS 17, ","MSI Creator 17"];
   const programmingLaptops = ["Dell XP 15, ","MacBook Pro, ","Lenovo ThinkPad X1 Extreme, ","ASUS ZenBook Pro Duo"];
-  const ramLaptops = ["",""];
-
-
+  const storageLaptops = ["Alienware m15 R7 (1TB)","HP Envy 15 (1TB)", "MSI GS66 Stealth (1TB)", "HP Envy 15 (1TB)", "Dell XPS 17 (1TB)"];
+  const ramLaptops = ["MSI GS66 Stealth (32GB)", "ASUS ZenBook Pro Duo (32GB)","MacBook Pro (32GB)", "Dell XPS 17(32GB)", "Lenovo ThinkPad P1 Gen 3 (32GB)"]
 
   const userInput = document.getElementById('user-input');
   const sendButton = document.getElementById('send-button');
@@ -81,46 +79,94 @@ document.addEventListener('DOMContentLoaded', () => {
   /// goes through the item by item checking if string from the list is included in userInput
   /// if it does it gets the position of that item in that list
   let found = false;
+  
   function checkGaming(userInput) {
-    for(let i = 0; gamingInputs.length; i++) {
+    for(let i = 0; i < gamingInputs.length; i++) {
+      let counter = 0;
       checker =  gamingInputs[i];
       if (userInput.toLowerCase().includes(checker)) {
         found = true;
-        return true;
+        return found;
+      } else {
+        counter++;
       }
     }
-    return false
+    found = false;
+    return found;
   }
   function checkRAM(userInput){
-    for(let i = 0; ramInputs.length; i++) {
+    for(let i = 0; i < ramInputs.length; i++) {
       Rchecker = ramInputs[i];
+      let counter = 0;
       if (userInput.toLowerCase().includes(Rchecker)){
         found = true;
-        return true;
+        return found;
+      } else {
+        counter++
       }
     }
-    return false;
+    return found;
   }
-  function checkProgramming(){
-    for(let i = 0; programmingInputs.length; i++){
+  function checkProgramming(userInput){
+    for(let i = 0; i < programmingInputs.length; i++){
       Pchecker = programmingInputs[i];
-      if (userInput.toLowerCase().includes(checker)){
+      let counter = 0;
+      if (userInput.toLowerCase().includes(Pchecker)){
         found = true
-        return true;
+        return found;
+      } else {
+        counter++;
       }
     }
-    return false;
+    return found;
   }
-  function checkDisplay(){
-    for(let i = 0; displayInputs.length; i++){
-      Dchecker = displayInputs[i];
+  function checkStorage(userInput){
+    for(let i = 0; i < storageInputs.length; i++){
+      let counter = 0;
+      Dchecker = storageInputs[i];
+      if (userInput.toLowerCase().includes(Dchecker)){
+        found = true;
+        return found;
+      } else {
+        counter++;
+      }
+    }
+    found = false;
+    return found;
+  }
+  function checkEditing(userInput){
+    for (i = 0; i < editingInputs.length; i++){
+      let counter = 0;
+      checker = editingInputs[i];
       if (userInput.toLowerCase().includes(checker)){
         return true
+      } else {
+        counter++;
       }
-    } 
-    return false;
+    }
+    return found;
   }
-
+  function checkingGeneral(userInput){
+    for (i = 0; i < generalInputs.length; i++){
+      let counter =  0 ;
+      checker = generalInputs[i];
+      if (userInput.toLowerCase().includes(checker)) {
+        found = true;
+        return found
+      } else {
+        counter++;
+      }
+    }
+    found = false;
+    return found;
+  }
+  function printLaptops(laptops){
+    let response = '\n';
+    for (let i = 0; i < laptops.length; i++){
+      response += laptops[i] + '\n';
+    }
+    return response
+  }
   startingMessage();
   function generateResponse(userInput) {
     let response = '';
@@ -129,17 +175,32 @@ document.addEventListener('DOMContentLoaded', () => {
           response = 'Hello Ziad';
       } else if (userInput.toLowerCase() === 'fuck you'.toLowerCase()) {
           response = 'this type of language is not tolerated on the internet';
-      } else if (checkGaming(userInput) == true) {
-        response = 'Our reccomendation of gaming Laptops are:' + gamingLaptops;
-      } else if (checkRAM(userInput) == true) {
-        response = 'best ram inputs';
-      } else if(checkDisplay(userInput) == true){
-        response = 'the best display laptops';
-      } else if(checkProgramming(userInput) == true){
-        response = 'best gaming laptops';
-      } else if (programmingInputs.includes(userInput) && programmingInputs.indexOf(userInput) !== -1){
-        response = 'Our recommendations of programming Laptops are ' + programmingLaptops;
-      } else {
+      } else if (checkGaming(userInput) == true && found == true) {
+        response = 'Our recomendation of gaming Laptops are: ' + printLaptops(gamingLaptops);
+      } else if (checkRAM(userInput) == true && found == true) {
+        response = 'Our recommendation for the laptops with the best RAM are:' + printLaptops(ramLaptops);
+        printLaptops(ramInputs);
+      } else if(checkStorage(userInput) == true && found == true){
+        response = 'The best laptops with the best storage are ' + printLaptops(storageLaptops);
+        for (let i = 0; i < dis; i++){
+          response = gamingLaptops[i];
+        }
+      } else if(checkEditing(userInput) == true && found == true){
+        response = 'Our recommendations of programming Laptops are ' + printLaptops(editingLaptops);
+        for (let i = 0; i < editingLaptops; i++){
+          response = editingLaptops[i];
+        }
+      } else if (checkProgramming(userInput) == true && found == true){
+        response = 'Our recommendations of programming Laptops are ' + printLaptops(programmingLaptops);
+        for (let i = 0; i < programmingLaptops; i++){
+          repsonse = programmingLaptops[i];
+        }
+      } else if (checkingGeneral(userInput) == true && found == true) {
+        response = 'If you want an everday use laptop these are our recommendations: ' + printLaptops(generalLaptops);
+        for (let i = 0; i < generalLaptops; i++){
+          response = generalLaptops[i];
+        }
+      }else {
           response = 'I am not programmed to respond to this message.';
       }
 
@@ -147,23 +208,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
           sendMessage(response, 'bot-message');
       }, 1000);
-    }
+  }
 })
-    if (userInput.toLowerCase() === 'hello world') {
-      response = 'Hello!';
-    } else if (userInput.toLowerCase().includes('recommend a laptop')) {
-      response = getLaptopRecommendation(userInput);
-    } else {
-      response = 'I am not programmed to respond to this message.';
-    }
-
-
-    // You can add more conditions here
-
-    setTimeout(() => {
-      sendMessage(response, 'bot-message');
-    }, 1000);
-  
 
   function getLaptopRecommendation(userInput) {
     const laptops = [
@@ -186,4 +232,3 @@ document.addEventListener('DOMContentLoaded', () => {
     return recommendation || "I couldn't find a recommendation based on your input. Please try again.";
   }
 ;
-startingMessage();
