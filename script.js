@@ -30,7 +30,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   
-  const ramInputs = ["fast", "fastest", "quick", "quickest", "ram"];
+  const ramInputs = ["fast", "fastest", "quick", "quickest", "RAM"];
   const storageInputs = ["storage", "space"];
   const gamingInputs = ["games", "gaming", "game"];
   const programmingInputs = ["programming","programme","coding","code"];
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let response = '';
       
       if (userInput.toLowerCase() === 'hello world'.toLowerCase()) {
-          response = 'Hello Ziad';
+          response = 'Hello Buddy';
       } else if (userInput.toLowerCase() === 'fuck you'.toLowerCase()) {
           response = 'this type of language is not tolerated on the internet';
       } else if (checkGaming(userInput) == true && found == true) {
@@ -182,16 +182,24 @@ document.addEventListener('DOMContentLoaded', () => {
         printLaptops(ramInputs);
       } else if(checkStorage(userInput) == true && found == true){
         response = 'The best laptops with the best storage are ' + printLaptops(storageLaptops);
-        
+        for (let i = 0; i < dis; i++){
+          response = gamingLaptops[i];
+        }
       } else if(checkEditing(userInput) == true && found == true){
-        response = 'Our recommendations of Editing Laptops are ' + printLaptops(editingLaptops);
-        
+        response = 'Our recommendations of programming Laptops are ' + printLaptops(editingLaptops);
+        for (let i = 0; i < editingLaptops; i++){
+          response = editingLaptops[i];
+        }
       } else if (checkProgramming(userInput) == true && found == true){
         response = 'Our recommendations of programming Laptops are ' + printLaptops(programmingLaptops);
-        
+        for (let i = 0; i < programmingLaptops; i++){
+          repsonse = programmingLaptops[i];
+        }
       } else if (checkingGeneral(userInput) == true && found == true) {
         response = 'If you want an everday use laptop these are our recommendations: ' + printLaptops(generalLaptops);
-        
+        for (let i = 0; i < generalLaptops; i++){
+          response = generalLaptops[i];
+        }
       }else {
           response = 'I am not programmed to respond to this message.';
       }
