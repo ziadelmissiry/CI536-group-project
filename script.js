@@ -1,3 +1,4 @@
+
 // // Get the necessary DOM elements
 // const userInput = document.getElementById('user-input');
 // const submitButton = document.getElementById('submit-button');
@@ -155,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       response = 'I am not programmed to respond to this message.';
     }
+
 
     // You can add more conditions here
 
