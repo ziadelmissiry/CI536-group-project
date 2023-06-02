@@ -135,20 +135,23 @@ document.addEventListener('DOMContentLoaded', () => {
     return found;
   }
   function checkEditing(userInput){
-    for (i = 0; i < editingInputs.length; i++){
+    for(let i = 0; i < editingInputs.length; i++){
       let counter = 0;
-      checker = editingInputs[i];
-      if (userInput.toLowerCase().includes(checker)){
-        return true
+      Echecker = editingInputs[i];
+      if (userInput.toLowerCase().includes(Echecker)){
+        found = true;
+        return found;
       } else {
         counter++;
       }
     }
+    found = false;
     return found;
   }
+  
   function checkingGeneral(userInput){
     for (i = 0; i < generalInputs.length; i++){
-      let counter =  0 ;
+      let counter = 0 ;
       checker = generalInputs[i];
       if (userInput.toLowerCase().includes(checker)) {
         found = true;
@@ -170,46 +173,46 @@ document.addEventListener('DOMContentLoaded', () => {
   startingMessage();
   function generateResponse(userInput) {
     let response = '';
-      
-      if (userInput.toLowerCase() === 'hello world'.toLowerCase()) {
-          response = 'Hello Buddy';
-      } else if (userInput.toLowerCase() === 'fuck you'.toLowerCase()) {
-          response = 'this type of language is not tolerated on the internet';
-      } else if (checkGaming(userInput) == true && found == true) {
-        response = 'Our recomendation of gaming Laptops are: ' + printLaptops(gamingLaptops);
-      } else if (checkRAM(userInput) == true && found == true) {
-        response = 'Our recommendation for the laptops with the best RAM are:' + printLaptops(ramLaptops);
-        printLaptops(ramInputs);
-      } else if(checkStorage(userInput) == true && found == true){
-        response = 'The best laptops with the best storage are ' + printLaptops(storageLaptops);
-        for (let i = 0; i < dis; i++){
-          response = gamingLaptops[i];
-        }
-      } else if(checkEditing(userInput) == true && found == true){
-        response = 'Our recommendations of programming Laptops are ' + printLaptops(editingLaptops);
-        for (let i = 0; i < editingLaptops; i++){
-          response = editingLaptops[i];
-        }
-      } else if (checkProgramming(userInput) == true && found == true){
-        response = 'Our recommendations of programming Laptops are ' + printLaptops(programmingLaptops);
-        for (let i = 0; i < programmingLaptops; i++){
-          repsonse = programmingLaptops[i];
-        }
-      } else if (checkingGeneral(userInput) == true && found == true) {
-        response = 'If you want an everday use laptop these are our recommendations: ' + printLaptops(generalLaptops);
-        for (let i = 0; i < generalLaptops; i++){
-          response = generalLaptops[i];
-        }
-      }else {
-          response = 'I am not programmed to respond to this message.';
+  
+    if (userInput.toLowerCase() === 'hello world'.toLowerCase()) {
+      response = 'Hello Buddy';
+    } else if (userInput.toLowerCase() === 'fuck you'.toLowerCase()) {
+      response = 'This type of language is not tolerated on the internet';
+    } else if (checkGaming(userInput) == true && found == true) {
+      response = 'Our recommendation of gaming laptops are: ' + printLaptops(gamingLaptops);
+    } else if (checkRAM(userInput) == true && found == true) {
+      response = 'Our recommendation for the laptops with the best RAM are: ' + printLaptops(ramLaptops);
+      printLaptops(ramInputs);
+    } else if (checkStorage(userInput) == true && found == true) {
+      response = 'The best laptops with the best storage are: ' + printLaptops(storageLaptops);
+      for (let i = 0; i < storageLaptops; i++) {
+        response = storageLaptops[i];
       }
-
-      // You can add more conditions here
-      setTimeout(() => {
-          sendMessage(response, 'bot-message');
-      }, 1000);
+    } else if (checkEditing(userInput) == true && found == true) {
+      response = 'Our recommendations of editing laptops are: ' + printLaptops(editingLaptops);
+      for (let i = 0; i < editingLaptops; i++) {
+        response = editingLaptops[i];
+      }
+    } else if (checkProgramming(userInput) == true && found == true) {
+      response = 'Our recommendations of programming laptops are: ' + printLaptops(programmingLaptops);
+      for (let i = 0; i < programmingLaptops; i++) {
+        response = programmingLaptops[i];
+      }
+    } else if (checkingGeneral(userInput) == true && found == true) {
+      response = 'If you want an everyday use laptop, these are our recommendations: ' + printLaptops(generalLaptops);
+      for (let i = 0; i < generalLaptops; i++) {
+        response = generalLaptops[i];
+      }
+    } else {
+      response = 'I am not programmed to respond to this message.';
+    }
+  
+    // You can add more conditions here
+    setTimeout(() => {
+      sendMessage(response, 'bot-message');
+    }, 1000);
   }
-})
+  
 
   function getLaptopRecommendation(userInput) {
     const laptops = [
@@ -231,4 +234,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     return recommendation || "I couldn't find a recommendation based on your input. Please try again.";
   }
-;
+})
