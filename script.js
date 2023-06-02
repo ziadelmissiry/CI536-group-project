@@ -48,7 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const sendButton = document.getElementById('send-button');
   const chatOutput = document.getElementById('chat-output');
   function startingMessage() {
-    chatOutput.innerHTML += '<p>What kind of laptop are you looking for?</p>';
+    chatOutput.innerHTML += '<h3>What kind of laptop are you looking for?<h3>';
+  };
+  function choicepreference() {
+    chatOutput.innerHTML += '<p>Please choose from the following: Gaming, Programming, Editing or General use. You can also ask for RAM and Storage to get the best quality laptops for those hardwares.</p>';
   };
 
   sendButton.addEventListener('click', () => {
@@ -171,6 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return response
   }
   startingMessage();
+  choicepreference();
   function generateResponse(userInput) {
     let response = '';
   
