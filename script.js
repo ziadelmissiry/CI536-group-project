@@ -30,7 +30,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   
-  const ramInputs = ["fast", "fastest", "quick", "quickest", "RAM"];
+  const ramInputs = ["fast", "fastest", "quick", "quickest", "RAM", "ram"];
   const storageInputs = ["storage", "space"];
   const gamingInputs = ["games", "gaming", "game"];
   const programmingInputs = ["programming","programme","coding","code"];
