@@ -31,10 +31,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   
   const ramInputs = ["fast", "fastest", "quick", "quickest", "RAM", "ram"];
-  const storageInputs = ["storage", "space"];
+  const storageInputs = ["storage", "space", "hdd", "harddrive"];
   const gamingInputs = ["games", "gaming", "game"];
   const programmingInputs = ["programming","programme","coding","code"];
-  const editingInputs = ["editing","edit","create","creative"];
+  const editingInputs = ["editing","edit","create","creative", "creativity", "video editing", "movie"];
   const generalInputs = ["general","general use","everyday","everday use"];
 
   const gamingLaptops = ["Alienware m15 r7","ASUS ROG Zephyrus G14","Razer Blade 15","MSI GS66 Stealth"];
