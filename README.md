@@ -27,6 +27,22 @@ words and cussing is not allowed. The chatbot will automatically respond with a 
 websites and all kinds of ages are allowed to use it.
 
 # Screenshots of the website:
+Website recommending laptops based on users preference:
+<img width="310" alt="sc 4 no1" src="https://github.com/user-attachments/assets/ce53ce6f-6434-4290-9723-8d45c91147f9" />
+
+Screenshot of the website about page that describes the website and its policies regarding Legal and Ethical issues:
+
+<img width="319" alt="sc 1" src="https://github.com/user-attachments/assets/11c3b34e-fc7d-4e52-984c-e64fe5d8621f" />
+
+Screenshot of the website contact page that asks the user for contact
+details:
+<img width="316" alt="sc 2" src="https://github.com/user-attachments/assets/9cc3f2cd-d7c8-456a-b41f-82cdc2e15d64" />
+
+Screenshot of the website that gives the user support details:
+
+<img width="314" alt="sc 3" src="https://github.com/user-attachments/assets/ca43b06e-9f28-450e-bb14-ba3335249f3a" />
+
+
 
 # Chatbot Methodology
 The methodology of the chatbot is as follows. Project management we used Trello as well as
@@ -234,7 +250,110 @@ box testing. Black box testing also allows for comprehensive
 evaluation of the system, which in turn covers various scenarios
 and input combinations
 
+<img width="292" alt="test table" src="https://github.com/user-attachments/assets/54069a88-7b6a-4d9b-b40e-5677d12037e3" />
 
+# Legal and ethical issues:
+
+## Chatbot Recommendations
+
+When developing a chatbot, it is crucial to address legal and ethical issues to ensure a
+responsible and reliable user experience. One significant issue to consider is bias in the
+recommendations provided by the chatbot. It is important to design the chatbot in a way that
+avoids any biassed or unfair recommendations based on factors such as race, gender, or other protected characteristics. The recommendations should be objective, transparent, and based on
+relevant criteria such as user preferences, specifications, and performance of the laptops.
+Keeping the chatbot's database up to date is essential to provide customers with accurate and
+current information. As new laptops are constantly introduced to the market, the chatbot should
+regularly update its database to ensure that the recommendations reflect the latest options
+available. This may involve monitoring laptop releases, specifications, and customer reviews to
+maintain the accuracy of the recommendations (Ico.org.uk, 2023).
+
+## Contact page
+
+The ICO Information Commissioner's Office (ICO) It is an independent regulatory authority in
+the United Kingdom that is responsible for upholding information rights and enforcing data
+protection laws.In the Uk and EU business are required to Provide clear and accessible contact
+information this is why we have a contact page in our website (Ico.org.uk, 2023). Users can
+contact us by providing their name, email, and message containing feedback or a question
+(Ico.org.uk, 2023).
+
+## Right to be informed
+
+Website users have to be informed about what data is being collected because of privacy laws.
+Our chatbot website does not collect any data about the user. We have an about page that
+explains our privacy.On the about page the privacy section clearly explains our data collection
+practices. The website is designed in a way that it does not collect any cookies or user
+information. The only thing that is collected is if a user sends a question or request through the
+contact page the email is collected (Ico.org.uk, 2023).
+
+## Right of Erasure
+
+On the about page privacy section the website clearly explains to the user about their rights one
+of these rights is the right of erasure also known as the right to be forgotten. According to the
+ICO websites must comply with this. As mentioned in the right to be informed section in this
+essay the user can request via email to evoke the right of erasure which is the right for the user
+to delete all the emails that they sent us if they wish. After receiving your email we will need to
+verify your identity before we invoke your right of erasure. We have to reply within one month
+(Ico.org.uk, 2023).
+
+## Right of access
+
+A key component of data protection under the UK General Data Protection Regulation (UK
+GDPR) is the right of access. As mentioned before we only collect emails that are sent to us
+through the contact page individuals can reserve the right to have access or get a copy of the
+data we collected and the emails they sent us. After receiving the request we will verify your
+identity before providing you a copy of the data. Users have to send us an email requesting right of access. Under Uk law we have to comply and send them a copy of their data within one
+month (Ico.org.uk, 2023).
+
+## Right to rectification
+
+As measured in the about page privacy section users can email us to exercise your right of
+rectification which is the right to change any inaccurate information as mentioned before the
+only information collected is through the contact page. Upon receiving your request we reply to
+your request within the time frame of the UK GDPR which is one month (Ico.org.uk, 2023).
+
+## Right of restriction
+
+Individuals can ask for their right of restriction that basically means restriction or suppression of
+their personal data. By default all their data is secure because the only data collected is through
+the contact page. This is not an absolute right and only applies to certain conditions. However
+we will reply to any email within one month (Ico.org.uk, 2023).
+
+## Right to object
+
+As mentioned in the about page users data is not used for any marketing and is completely
+secured. However if a user wishes to email us we will reply within one month to
+respond(Ico.org.uk, 2023).
+
+# Critical Review
+
+  With this project there were lessons learnt, issues solved and plenty of success as a whole.
+Firstly, the project does as intended and is fit for purpose to an extent. There is room for more
+recommendations and development on the users requirements. These could include but are not
+limited to; a wider range of laptops, more accurate recommendations for the user and a more
+user friendly graphical user interface.
+  As I mentioned at the start of the critical review, there has been plenty of success with this
+project. The first major success being that the user is able to type in their requirements for a
+laptop and the program will recommend a laptop based on their requirements. It took a while
+getting the code to work and succeed in providing a recommendation, and we as a group learnt
+that using consistent naming of variables as well as using camel notation meant that the code
+was easier to read/understand.
+  Furthermore, success was also found in the design of the webpage. Many webpages are grey,
+basic and aren’t interesting for the user to look at, as well as a lack of information for the users.
+Whereas, the stylesheet (CSS) was altered to add a gradient blue colour at the top of the
+screen, as well as a centralised look to the information provided to the users on the about page.
+The same was done with the contact tab which has been made to look cleaner and provide
+users with support and FAQ.
+  Moving onto what has been learnt during this project. It was important for us as a group to
+understand how to prevent infinite loops within for loops. This caused an issue for the
+programming as it would crash when typing and entering either ‘fast’ or ‘quick’ into the search
+bar. We fixed this by changing the conditional in the for loop that can be seen on line 155. As
+well as this, taking users inputs and then running them through a list of words to get a desired
+outcome. This was done by using iterations and ‘.includes’ commands.
+  Some more improvements that could’ve been made were a more regular meeting schedule. It
+would’ve meant we as a group could’ve had more in-depth covering on the project. Rather than
+some members not knowing what to do and what not to do, and when to do it. As well as, in
+relation to the code there were some unused variables within the code which should be
+removed to avoid confusion and reduce clutter.
 
 
 
