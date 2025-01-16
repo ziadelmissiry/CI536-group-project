@@ -27,18 +27,17 @@ words and cussing is not allowed. The chatbot will automatically respond with a 
 websites and all kinds of ages are allowed to use it.
 
 # Screenshots of the website:
-Website recommending laptops based on users preference:
+## Website recommending laptops based on users preference:
 <img width="310" alt="sc 4 no1" src="https://github.com/user-attachments/assets/ce53ce6f-6434-4290-9723-8d45c91147f9" />
 
-Screenshot of the website about page that describes the website and its policies regarding Legal and Ethical issues:
+## Screenshot of the website about page that describes the website and its policies regarding Legal and Ethical issues:
 
 <img width="319" alt="sc 1" src="https://github.com/user-attachments/assets/11c3b34e-fc7d-4e52-984c-e64fe5d8621f" />
 
-Screenshot of the website contact page that asks the user for contact
-details:
+## Screenshot of the website contact page that asks the user for contact details:
 <img width="316" alt="sc 2" src="https://github.com/user-attachments/assets/9cc3f2cd-d7c8-456a-b41f-82cdc2e15d64" />
 
-Screenshot of the website that gives the user support details:
+## Screenshot of the website that gives the user support details:
 
 <img width="314" alt="sc 3" src="https://github.com/user-attachments/assets/ca43b06e-9f28-450e-bb14-ba3335249f3a" />
 
